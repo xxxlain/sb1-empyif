@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+}
+
+:root {
+  --windows-terminal: #0C0C0C;
+  --windows-text: #CCCCCC;
+  --windows-border: #444444;
+  --windows-button: #2F2F2F;
+  --windows-button-text: #CCCCCC;
+  --windows-prompt: #F9F1A5;
+  --windows-timestamp: #569CD6;
+  --windows-sender: #4EC9B0;
+}
+
+.bg-windows-terminal { background-color: var(--windows-terminal); }
+.text-windows-text { color: var(--windows-text); }
+.border-windows-border { border-color: var(--windows-border); }
+.bg-windows-button { background-color: var(--windows-button); }
+.text-windows-button-text { color: var(--windows-button-text); }
+.text-windows-prompt { color: var(--windows-prompt); }
+.text-windows-timestamp { color: var(--windows-timestamp); }
+.text-windows-sender { color: var(--windows-sender); }
+
+.font-inconsolata {
+  font-family: 'Inconsolata', monospace;
+}
+
+.font-roboto-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.font-press-start {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--windows-terminal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--windows-border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--windows-button);
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.cursor::after {
+  content: '█';
+  animation: blink 1s infinite;
+}
